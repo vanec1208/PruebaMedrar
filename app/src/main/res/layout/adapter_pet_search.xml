@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/edittext_padding">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_id_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_name_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_type_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_age_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pet_breed_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblBreed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_top"
+            android:text="@string/owner_title"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_id_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblOwnerId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_name_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblOwnerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/owner_phone_title"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblOwnerPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/icon_delete"/>
+</LinearLayout>

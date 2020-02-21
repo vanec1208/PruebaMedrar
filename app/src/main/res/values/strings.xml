@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">PruebaMedrar</string>
+
+    <!--Activity Main-->
+    <string name="pet_registration">Registrar mascota</string>
+    <string name="pet_search_delete">Consultar/eliminar mascota</string>
+    <string name="vaccine_registration">Registrar vacuna</string>
+    <string name="owner_registration">Registrar propietario</string>
+    <string name="finish">Salir</string>
+
+    <!--Fragment Owner registration-->
+    <string name="owner_new">Nuevo propietario</string>
+    <string name="owner_id">Cédula propietario</string>
+    <string name="owner_name">Nombre propietario</string>
+    <string name="owner_phone">Teléfono propietario</string>
+    <string name="register">Registrar</string>
+    <string name="empty_field">Campo obligatorio</string>
+    <string name="owner_exists">El propietario ya se encuentra registrado.</string>
+
+    <!--Dialog-->
+    <string name="owner_successful">Propietario registrado exitosamente.</string>
+    <string name="delete_successful">La mascota se ha eliminado exitosamente.</string>
+    <string name="pet_successful">Mascota registrada exitosamente.</string>
+    <string name="accept">Aceptar</string>
+
+    <!--Fragment Pet registration-->
+    <string name="pet_new">Nueva mascota</string>
+    <string name="pet_id">Cédula mascota</string>
+    <string name="pet_name">Nombre mascota</string>
+    <string name="pet_age">Edad</string>
+    <string name="pet_breed">Raza</string>
+    <string name="pet_type">Debe seleccionar tipo de mascota.</string>
+    <string name="pet_exists">La mascota ya se encuentra registrada.</string>
+
+    <!--Dialog search-->
+    <string name="owner_search">Cédula o nombre del propietario</string>
+    <string name="owner_id_title">Cédula:</string>
+    <string name="owner_name_title">Nombre:</string>
+    <string name="owner_phone_title">Teléfono:</string>
+    <string name="search_title">Búsqueda de propietario</string>
+
+    <string-array name="pet_types">
+        <item>Seleccione tipo</item>
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Pájaro</item>
+    </string-array>
+
+    <!--Adapter pet search-->
+    <string name="owner_title">Propietario</string>
+    <string name="pet_title">Mascota</string>
+    <string name="pet_type_title">Tipo:</string>
+    <string name="pet_age_title">Edad:</string>
+    <string name="pet_breed_title">Raza:</string>
+    <string name="delete_confirmation">¿Seguro que desea eliminar la mascota?</string>
+
+    <!--Dialog Pet search-->
+    <string name="pet_search">Cédula o nombre de la mascota</string>
+    <string name="pet_search_title">Búsqueda de mascota</string>
+</resources>

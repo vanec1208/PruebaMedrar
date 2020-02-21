@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/layout_padding"
+    android:paddingEnd="@dimen/layout_padding"
+    tools:context=".activities.MainActivity">
+
+    <Button
+        android:id="@+id/btnOwnerRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:background="@drawable/style_button"
+        android:onClick="onClick"
+        android:text="@string/owner_registration"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText" />
+
+    <Button
+        android:id="@+id/btnPetRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:background="@drawable/style_button"
+        android:onClick="onClick"
+        android:text="@string/pet_registration"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText" />
+
+    <Button
+        android:id="@+id/btnPetSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:background="@drawable/style_button"
+        android:onClick="onClick"
+        android:text="@string/pet_search_delete"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText" />
+
+    <Button
+        android:id="@+id/btnVaccineRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:background="@drawable/style_button"
+        android:onClick="onClick"
+        android:text="@string/vaccine_registration"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText" />
+
+    <Button
+        android:id="@+id/btnFinish"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:background="@drawable/style_button"
+        android:onClick="onClick"
+        android:text="@string/finish"
+        android:textAllCaps="false"
+        android:textColor="@color/colorButtonText" />
+</LinearLayout>

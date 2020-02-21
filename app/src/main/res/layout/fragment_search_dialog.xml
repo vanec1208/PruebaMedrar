@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/style_dialog"
+    android:padding="@dimen/edittext_padding"
+    tools:context=".dialogs.SearchDialog">
+
+    <TextView
+        android:id="@+id/lblTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/search_title"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/edittext_height"
+        android:layout_marginTop="@dimen/view_margin_top"
+        android:background="@drawable/style_edittext"
+        android:drawableEnd="@drawable/icon_search"
+        android:hint="@string/owner_search"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:paddingStart="@dimen/edittext_padding"
+        android:paddingEnd="@dimen/edittext_padding"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/txtSearch" />
+</androidx.constraintlayout.widget.ConstraintLayout>
