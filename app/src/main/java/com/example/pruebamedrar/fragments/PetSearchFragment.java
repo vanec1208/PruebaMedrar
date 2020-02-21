@@ -54,7 +54,7 @@ public class PetSearchFragment extends Fragment implements PetSearchAdapter.OnFr
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setHasFixedSize(true);
 
-        petSearchAdapter = new PetSearchAdapter(context, listPets, null);
+        petSearchAdapter = new PetSearchAdapter(context, listPets, this);
         recyclerView.setAdapter(petSearchAdapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(context, DividerItemDecoration.VERTICAL));
 

@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.pruebamedrar.R;
 import com.example.pruebamedrar.beans.Pet;
-import com.example.pruebamedrar.transactions.PetTransactions;
 
 import java.util.ArrayList;
 
@@ -66,20 +65,23 @@ public class PetSearchAdapter extends RecyclerView.Adapter<PetSearchAdapter.View
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setMessage(context.getString(R.string.delete_confirmation));
-                final AlertDialog alertDialog = builder.create();
 
                 builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         mListener.selectPet(pet);
-                        alertDialog.dismiss();
+                        dialogInterface.dismiss();
                     }
                 }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        alertDialog.dismiss();
+                        dialogInterface.dismiss();
                     }
                 });
+
+                AlertDialog dialog = builder.create();
+                dialog.setCanceledOnTouchOutside(false);
+                dialog.show();
             }
         });
     }
@@ -90,7 +92,7 @@ public class PetSearchAdapter extends RecyclerView.Adapter<PetSearchAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
+        //public final View mView;
 
         public final TextView lblId;
         public final TextView lblName;
@@ -104,7 +106,7 @@ public class PetSearchAdapter extends RecyclerView.Adapter<PetSearchAdapter.View
 
         public ViewHolder(View view) {
             super(view);
-            mView = view;
+            //mView = view;
 
             lblId = view.findViewById(R.id.lblId);
             lblName = view.findViewById(R.id.lblName);
