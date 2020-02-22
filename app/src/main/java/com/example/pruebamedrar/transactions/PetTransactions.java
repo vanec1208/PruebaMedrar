@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.pruebamedrar.beans.Owner;
 import com.example.pruebamedrar.beans.Pet;
+import com.example.pruebamedrar.beans.PetVaccines;
 import com.example.pruebamedrar.db.VeterinaryDb;
 import com.example.pruebamedrar.db.VeterinaryTables;
 
@@ -53,11 +54,11 @@ public class PetTransactions {
                 "O." + VeterinaryTables.OwnersTable.PHONE;
 
         Cursor cursor = db.rawQuery("SELECT " + selection + " FROM " + VeterinaryTables.PetsTable.TABLE_NAME +
-                    " P LEFT JOIN " + VeterinaryTables.OwnersTable.TABLE_NAME +
-                    " O ON P." + VeterinaryTables.PetsTable.OWNER + " = O." + VeterinaryTables.OwnersTable.ID +
-                    " WHERE P." + VeterinaryTables.PetsTable.ID + " LIKE '%" + like + "%' OR P." +
-                    VeterinaryTables.PetsTable.NAME + " LIKE '%" + like + "%' ",
-            null);
+                        " P LEFT JOIN " + VeterinaryTables.OwnersTable.TABLE_NAME +
+                        " O ON P." + VeterinaryTables.PetsTable.OWNER + " = O." + VeterinaryTables.OwnersTable.ID +
+                        " WHERE P." + VeterinaryTables.PetsTable.ID + " LIKE '%" + like + "%' OR P." +
+                        VeterinaryTables.PetsTable.NAME + " LIKE '%" + like + "%' ",
+                null);
 
         while(cursor.moveToNext()) {
             Pet pet = new Pet();
@@ -81,5 +82,54 @@ public class PetTransactions {
         db.delete(VeterinaryTables.PetsTable.TABLE_NAME,
                 VeterinaryTables.PetsTable.ID + " = " + petId,
                 null);
+    }
+
+    public static ArrayList<PetVaccines> getPetVaccines(Context context, String like) {
+        SQLiteDatabase db = VeterinaryDb.getInstance(context);
+        ArrayList<PetVaccines> listPetVaccines = new ArrayList<>();
+
+        String selection = VeterinaryTables.PetsTable.ID + ", " +
+                 VeterinaryTables.PetsTable.NAME;
+
+        Cursor cursor = db.rawQuery("SELECT " + selection + " FROM " + VeterinaryTables.PetsTable.TABLE_NAME +
+                        " WHERE " + VeterinaryTables.PetsTable.ID + " LIKE '%" + like + "%' OR " +
+                        VeterinaryTables.PetsTable.NAME + " LIKE '%" + like + "%' ",
+                null);
+
+
+        while(cursor.moveToNext()) {
+            PetVaccines petVaccines = new PetVaccines();
+            petVaccines.setPetId(cursor.getInt(0));
+            petVaccines.setPetName(cursor.getString(1));
+
+            String strVaccines = getVaccinesByPet(context, cursor.getInt(0));
+            petVaccines.setVaccines(strVaccines);
+
+            listPetVaccines.add(petVaccines);
+        }
+
+        return listPetVaccines;
+    }
+
+    public static String getVaccinesByPet(Context context, int id) {
+        SQLiteDatabase db = VeterinaryDb.getInstance(context);
+
+        String [] col = {VeterinaryTables.VaccinesTable.NAME,
+                VeterinaryTables.VaccinesTable.DATE,
+                VeterinaryTables.VaccinesTable.DOSE
+        };
+
+        Cursor cursor = db.query(VeterinaryTables.VaccinesTable.TABLE_NAME, col,
+                VeterinaryTables.VaccinesTable.PET + " = " + id,
+                null, null, null, null);
+
+        String strVaccines = "";
+
+        while (cursor.moveToNext()) {
+            strVaccines += cursor.getString(0) + ", " + cursor.getString(1) + ", " +
+                    cursor.getString(2) + "\n";
+        }
+
+        return strVaccines;
     }
 }

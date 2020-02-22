@@ -57,4 +57,12 @@
     <!--Dialog Pet search-->
     <string name="pet_search">Cédula o nombre de la mascota</string>
     <string name="pet_search_title">Búsqueda de mascota</string>
+
+    <!--Fragment Vaccine registration-->
+    <string name="vaccine_new">Nueva vacuna</string>
+    <string name="vaccine_name">Nombre vacuna</string>
+    <string name="vaccine_date">Fecha vacuna</string>
+    <string name="vaccine_dose">Dosis</string>
+    <string name="vaccines_title">Vacunas</string>
+    <string name="vaccines_empty">No tiene vacunas</string>
 </resources>

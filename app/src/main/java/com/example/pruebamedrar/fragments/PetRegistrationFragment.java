@@ -23,7 +23,7 @@ import com.example.pruebamedrar.dialogs.SearchDialog;
 import com.example.pruebamedrar.transactions.PetTransactions;
 import com.google.android.material.snackbar.Snackbar;
 
-public class PetRegistrationFragment extends Fragment  {
+public class PetRegistrationFragment extends Fragment {
 
     private Context context;
 
@@ -63,14 +63,14 @@ public class PetRegistrationFragment extends Fragment  {
 
         spnType = view.findViewById(R.id.spnType);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(context,
-                R.array.pet_types, android.R.layout.simple_spinner_item);
+                R.array.pet_types, R.layout.style_spinner);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnType.setAdapter(adapter);
 
         txtOwner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                searchDialog = new SearchDialog();
+                searchDialog = SearchDialog.newInstance("owner");
                 searchDialog.show(getChildFragmentManager(), "search");
             }
         });
@@ -87,41 +87,41 @@ public class PetRegistrationFragment extends Fragment  {
 
                 boolean hasEmpty = false;
 
-                if(TextUtils.isEmpty(strId)) {
+                if (TextUtils.isEmpty(strId)) {
                     txtId.setError(getString(R.string.empty_field));
                     hasEmpty = true;
                 }
 
-                if(TextUtils.isEmpty(strName)) {
+                if (TextUtils.isEmpty(strName)) {
                     txtName.setError(getString(R.string.empty_field));
                     hasEmpty = true;
                 }
 
-                if(!hasType) {
+                if (!hasType) {
                     Snackbar.make(btnRegister, getString(R.string.pet_type), 2000).show();
                     hasEmpty = true;
                 }
 
-                if(TextUtils.isEmpty(strAge)) {
+                if (TextUtils.isEmpty(strAge)) {
                     txtAge.setError(getString(R.string.empty_field));
                     hasEmpty = true;
                 }
 
-                if(TextUtils.isEmpty(strBreed)) {
+                if (TextUtils.isEmpty(strBreed)) {
                     txtBreed.setError(getString(R.string.empty_field));
                     hasEmpty = true;
                 }
 
-                if(TextUtils.isEmpty(strOwner)) {
+                if (TextUtils.isEmpty(strOwner)) {
                     txtOwner.setError(getString(R.string.empty_field));
                     hasEmpty = true;
                 }
 
-                if(hasEmpty) {
+                if (hasEmpty) {
                     return;
                 }
 
-                if(PetTransactions.hasPet(context, Integer.valueOf(strId))) {
+                if (PetTransactions.hasPet(context, Integer.valueOf(strId))) {
                     Snackbar.make(btnRegister, getString(R.string.pet_exists), 2000).show();
                     return;
                 }

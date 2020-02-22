@@ -10,6 +10,7 @@ import com.example.pruebamedrar.R;
 import com.example.pruebamedrar.fragments.OwnerRegistrationFragment;
 import com.example.pruebamedrar.fragments.PetRegistrationFragment;
 import com.example.pruebamedrar.fragments.PetSearchFragment;
+import com.example.pruebamedrar.fragments.VaccineRegistrationFragment;
 
 public class ContainerActivity extends AppCompatActivity {
     public static final String CONTAINER_TYPE = "container_type";
@@ -41,6 +42,10 @@ public class ContainerActivity extends AppCompatActivity {
 
             case ContainerType.PET_SEARCH:
                 fragment = new PetSearchFragment();
+                break;
+
+            case ContainerType.VACCINE_REGISTRATION:
+                fragment = new VaccineRegistrationFragment();
                 break;
         }
 

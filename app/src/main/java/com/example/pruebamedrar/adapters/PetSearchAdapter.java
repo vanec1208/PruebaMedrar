@@ -51,15 +51,6 @@ public class PetSearchAdapter extends RecyclerView.Adapter<PetSearchAdapter.View
             holder.lblOwnerPhone.setText(pet.getOwner().getPhone());
         }
 
-       /* holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    mListener.selectPet(pet);
-                }
-            }
-        });*/
-
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

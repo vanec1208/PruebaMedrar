@@ -1,158 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/layout_padding"
+    android:orientation="vertical"
     tools:context=".fragments.PetRegistrationFragment">
 
-    <TextView
-        android:id="@+id/lblTitle"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pet_new"
-        android:textColor="@color/colorBlack"
-        android:textSize="@dimen/text_size"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fillViewport="true">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/view_margin_top"
-        android:hint="@string/pet_id"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/lblTitle">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtId"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/edittext_height"
-            android:background="@drawable/style_edittext"
-            android:inputType="number"
-            android:maxLength="12"
-            android:paddingStart="@dimen/edittext_padding"
-            android:paddingEnd="@dimen/edittext_padding" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/pet_name"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/inputId">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtName"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/edittext_height"
-            android:background="@drawable/style_edittext"
-            android:inputType="textCapWords"
-            android:maxLength="50"
-            android:paddingStart="@dimen/edittext_padding"
-            android:paddingEnd="@dimen/edittext_padding" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Spinner
-        android:id="@+id/spnType"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/edittext_height"
-        android:background="@drawable/style_edittext"
-        app:layout_constraintTop_toBottomOf="@id/inputName" />
-
-    <LinearLayout
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/view_margin_top"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/spnType">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputAge"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/pet_age"
-            app:errorEnabled="true"
-            app:layout_constraintHorizontal_weight="1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spnType">
+            android:paddingLeft="@dimen/layout_padding"
+            android:paddingRight="@dimen/layout_padding">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtAge"
+            <TextView
+                android:id="@+id/lblTitle"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edittext_height"
-                android:background="@drawable/style_edittext"
-                android:inputType="number"
-                android:maxLength="2"
-                android:paddingStart="@dimen/edittext_padding"
-                android:paddingEnd="@dimen/edittext_padding" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:text="@string/pet_new"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/text_size"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:layout_width="20dp"
-            android:layout_height="match_parent" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/inputBreed"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/pet_breed"
-            app:errorEnabled="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/inputAge"
-            app:layout_constraintTop_toBottomOf="@id/spnType">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtBreed"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputId"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/edittext_height"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:hint="@string/pet_id"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/InputLayout"
+                app:layout_constraintTop_toBottomOf="@id/lblTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtId"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/style_input"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:paddingStart="@dimen/edittext_padding"
+                    android:paddingTop="@dimen/edittext_padding"
+                    android:paddingEnd="@dimen/edittext_padding" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pet_name"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/InputLayout"
+                app:layout_constraintTop_toBottomOf="@id/inputId">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/style_input"
+                    android:inputType="textCapWords"
+                    android:maxLength="50"
+                    android:paddingStart="@dimen/edittext_padding"
+                    android:paddingTop="@dimen/edittext_padding"
+                    android:paddingEnd="@dimen/edittext_padding" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spnType"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spinner_height"
+                android:layout_marginTop="@dimen/view_margin_top"
                 android:background="@drawable/style_edittext"
-                android:inputType="textCapWords"
-                android:maxLength="30"
-                android:paddingStart="@dimen/edittext_padding"
-                android:paddingEnd="@dimen/edittext_padding" />
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+                app:layout_constraintTop_toBottomOf="@id/inputName" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputOwner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/owner_name"
-        app:errorEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/layout">
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_top"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/spnType">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtOwner"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/edittext_height"
-            android:background="@drawable/style_edittext"
-            android:drawableEnd="@drawable/icon_search"
-            android:focusable="false"
-            android:inputType="textCapWords"
-            android:maxLength="50"
-            android:paddingStart="@dimen/edittext_padding"
-            android:paddingEnd="@dimen/edittext_padding" />
-    </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputAge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/pet_age"
+                    app:errorEnabled="true"
+                    app:hintTextAppearance="@style/InputLayout"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/spnType">
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/style_button"
-        android:padding="@dimen/button_padding"
-        android:text="@string/register"
-        android:textAllCaps="false"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/text_size"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputOwner" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edittext_height"
+                        android:background="@drawable/style_input"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:paddingStart="@dimen/edittext_padding"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingEnd="@dimen/edittext_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputBreed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/pet_breed"
+                    app:errorEnabled="true"
+                    app:hintTextAppearance="@style/InputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/inputAge"
+                    app:layout_constraintTop_toBottomOf="@id/spnType">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtBreed"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edittext_height"
+                        android:background="@drawable/style_input"
+                        android:inputType="textCapWords"
+                        android:maxLength="30"
+                        android:paddingStart="@dimen/edittext_padding"
+                        android:paddingTop="@dimen/edittext_padding"
+                        android:paddingEnd="@dimen/edittext_padding" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputOwner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/owner_name"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/InputLayout"
+                app:layout_constraintTop_toBottomOf="@id/layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtOwner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edittext_height"
+                    android:background="@drawable/style_input"
+                    android:drawableEnd="@drawable/icon_search"
+                    android:focusable="false"
+                    android:inputType="textCapWords"
+                    android:maxLength="50"
+                    android:paddingStart="@dimen/edittext_padding"
+                    android:paddingTop="@dimen/edittext_padding"
+                    android:paddingEnd="@dimen/edittext_padding" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/style_button"
+                android:padding="@dimen/button_padding"
+                android:text="@string/register"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/text_size"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inputOwner" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

@@ -44,7 +44,7 @@ public class VeterinaryTables {
         public static final String CREATE = "CREATE TABLE " + TABLE_NAME + " (" +
                 NAME + " TEXT, " +
                 DATE + " TEXT, " +
-                DOSE + " TEXT " +
+                DOSE + " TEXT, " +
                 PET + " INTEGER " +
                 ")";
     }
