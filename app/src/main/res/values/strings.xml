@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PruebaMedrar</string>
+    <string name="app_name">Veterinaria</string>
 
     <!--Activity Main-->
     <string name="pet_registration">Registrar mascota</string>
